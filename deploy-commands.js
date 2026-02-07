@@ -5,20 +5,14 @@ const commands = [
     .setName("play")
     .setDescription("Odtwórz muzykę z YouTube")
     .addStringOption(option =>
-      option.setName("url").setDescription("Link YouTube").setRequired(true)
+      option.setName("url")
+        .setDescription("Link YouTube")
+        .setRequired(true)
     ),
-  new SlashCommandBuilder()
-  .setName("stop")
-  .setDescription("Zatrzymaj muzykę i wyjdź z kanału"),
-  new SlashCommandBuilder()
-    .setName("skip")
-    .setDescription("Pomiń utwór"),
-  new SlashCommandBuilder()
-    .setName("pause")
-    .setDescription("Pauza"),
-  new SlashCommandBuilder()
-    .setName("resume")
-    .setDescription("Wznów")
+  new SlashCommandBuilder().setName("skip").setDescription("Pomiń utwór"),
+  new SlashCommandBuilder().setName("pause").setDescription("Pauza"),
+  new SlashCommandBuilder().setName("resume").setDescription("Wznów"),
+  new SlashCommandBuilder().setName("stop").setDescription("Zatrzymaj muzykę i wyjdź z kanału")
 ].map(cmd => cmd.toJSON());
 
 const rest = new REST({ version: "10" }).setToken(process.env.TOKEN);
